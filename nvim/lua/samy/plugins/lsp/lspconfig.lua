@@ -85,12 +85,12 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["dartls"] = function()
-				lspconfig["dartls"].setup({
-					capabilities = capabilities,
-					cmd = { "dart", "language-server", "--protocol=lsp" },
-				})
-			end,
+			--["dartls"] = function()
+			--lspconfig["dartls"].setup({
+			--capabilities = capabilities,
+			--cmd = { "dart", "language-server", "--protocol=lsp" },
+			--})
+			--end,
 			["yamlls"] = function()
 				lspconfig["yamlls"].setup({
 					capabilities = capabilities,
