@@ -39,12 +39,16 @@ return {
 				"pyright",
 				"ast_grep", -- Dart, JavaScript, JSX, Kotlin
 				"dockerls",
+				"typescript-language-server",
+				"tailwindcss-language-server",
+				"eslint-lsp",
+				"prettierd",
 			},
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"prettier", -- prettier formatter
+				"prettierd",
 				"stylua", -- lua formatter
 				"isort", -- python formatter
 				"black", -- python formatter

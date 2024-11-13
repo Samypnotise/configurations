@@ -91,6 +91,11 @@ return {
 			--cmd = { "dart", "language-server", "--protocol=lsp" },
 			--})
 			--end,
+			["eslint"] = function()
+				lspconfig["eslint"].setup({
+					capabilities = capabilities,
+				})
+			end,
 			["yamlls"] = function()
 				lspconfig["yamlls"].setup({
 					capabilities = capabilities,
