@@ -39,10 +39,6 @@ return {
 				"pyright",
 				"ast_grep", -- Dart, JavaScript, JSX, Kotlin
 				"dockerls",
-				"typescript-language-server",
-				"tailwindcss-language-server",
-				"eslint-lsp",
-				"prettierd",
 			},
 		})
 
