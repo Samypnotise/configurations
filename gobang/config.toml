@@ -1,0 +1,7 @@
+[[conn]]
+type = "postgres"
+user = "postgres"
+host = "localhost"
+port = 5433
+database = "mediplan-api"
+name = "Mediplan API"
