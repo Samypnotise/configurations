@@ -17,9 +17,9 @@ return {
 		mason.setup({
 			ui = {
 				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
+					package_installed = "✔",
+					package_pending = "֎",
+					package_uninstalled = "✘",
 				},
 			},
 		})
@@ -34,10 +34,7 @@ return {
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
-				"graphql",
-				"emmet_ls",
 				"prismals",
-				"pyright",
 				"ast_grep", -- Dart, JavaScript, JSX, Kotlin
 				"dockerls",
 			},
@@ -47,9 +44,6 @@ return {
 			ensure_installed = {
 				"prettierd",
 				"stylua", -- lua formatter
-				"isort", -- python formatter
-				"black", -- python formatter
-				"pylint",
 				"eslint_d",
 			},
 		})
