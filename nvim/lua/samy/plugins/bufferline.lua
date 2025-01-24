@@ -5,7 +5,7 @@ return {
 	opts = {
 		options = {
 			mode = "tabs",
-			separator_style = "padded_slope",
+			separator_style = "slope",
 			buffer_close_icon = "✘ ",
 			modified_icon = "֎ ",
 			close_icon = "✘ ",

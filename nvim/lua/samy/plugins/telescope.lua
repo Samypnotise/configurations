@@ -27,6 +27,7 @@ return {
 		})
 
 		telescope.load_extension("fzf")
+		telescope.load_extension("flutter")
 
 		-- set keymaps
 		local keymap = vim.keymap -- for conciseness
