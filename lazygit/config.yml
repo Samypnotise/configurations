@@ -1,0 +1,24 @@
+promptToReturnFromSubprocess: true
+
+gui:
+  nerdFontsVersion: "3"
+  expandFocusedSidePanel: true
+
+customCommands:
+  - key: "F"
+    context: "global"
+    command: "git fetch --prune --prune-tags"
+    description: "Fetch and prune unused items"
+    loadingText: "Fetching and pruning..."
+
+  - key: "F"
+    context: "localBranches"
+    command: "git fetch --prune --prune-tags"
+    description: "Fetch and prune unused items"
+    loadingText: "Fetching and pruning..."
+
+  - key: "F"
+    context: "commits"
+    command: "git fetch --prune --prune-tags"
+    description: "Fetch and prune unused items"
+    loadingText: "Fetching and pruning..."
