@@ -68,7 +68,7 @@ return {
 			desc = "Delete Buffer",
 		},
 		{
-			"<leader>cR",
+			"<leader>rf",
 			function()
 				Snacks.rename.rename_file()
 			end,
@@ -96,13 +96,13 @@ return {
 			end,
 			desc = "Lazygit Current File History",
 		},
-		-- {
-		-- 	"<leader>gg",
-		-- 	function()
-		-- 		Snacks.lazygit()
-		-- 	end,
-		-- 	desc = "Lazygit",
-		-- },
+		{
+			"<leader>lg",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Lazygit",
+		},
 		{
 			"<leader>gl",
 			function()
