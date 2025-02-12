@@ -1,20 +1,20 @@
 prSections:
-- title: My Pull Requests
-  filters: is:open author:@me
-  type: null
-- title: Needs My Review
-  filters: is:open review-requested:@me
-  type: null
-- title: Involved
-  filters: is:open involves:@me -author:@me
-  type: null
+  - title: My Pull Requests
+    filters: is:open author:@me
+    type: null
+  - title: Needs My Review
+    filters: is:open review-requested:@me
+    type: null
+  - title: Involved
+    filters: is:open involves:@me -author:@me
+    type: null
 issuesSections:
-- title: My Issues
-  filters: is:open author:@me
-- title: Assigned
-  filters: is:open assignee:@me
-- title: Involved
-  filters: is:open involves:@me -author:@me
+  - title: My Issues
+    filters: is:open author:@me
+  - title: Assigned
+    filters: is:open assignee:@me
+  - title: Involved
+    filters: is:open involves:@me -author:@me
 repo:
   branchesRefetchIntervalSeconds: 30
   prsRefetchIntervalSeconds: 60
@@ -57,13 +57,31 @@ keybindings:
   issues: []
   prs: []
   branches: []
-repoPaths: {}
+repoPaths: {
+    "*": ~/Workspace/*, # Allows access to all repositories in your Workspace
+    "*/*": ~/Workspace/*, # Ensures all repos (including non-owned) are matched
+  }
 theme:
   ui:
     sectionsShowCount: true
     table:
       showSeparator: true
       compact: false
+  colors:
+    text:
+      primary: "#E2E1ED"
+      secondary: "#666CA6"
+      inverted: "#242347"
+      faint: "#3E4057"
+      warning: "#F23D5C"
+      success: "#3DF294"
+      error: "#D20F39"
+    background:
+      selected: "#39386B"
+    border:
+      primary: "#383B5B"
+      secondary: "#39386B"
+      faint: "#2B2B40"
 pager:
   diff: ""
 confirmQuit: false
