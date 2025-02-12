@@ -27,7 +27,7 @@ bold_italic_font auto
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-# font_size 11.0
+font_size 14.0
 
 #: Font size (in pts).
 
@@ -164,7 +164,7 @@ bold_italic_font auto
 #: placed in the cell. For example::
 
 #:     modify_font cell_width 80%
-#:     modify_font cell_height -2px
+modify_font cell_height 130%
 #:     modify_font baseline 3
 
 #: Note that modifying the baseline will automatically adjust the
@@ -245,109 +245,109 @@ bold_italic_font auto
 
 #: }}}
 
-#: Text cursor customization {{{
+#: text cursor customization {{{
 
 # cursor #cccccc
 
-#: Default text cursor color. If set to the special value none the
-#: cursor will be rendered with a "reverse video" effect. Its color
+#: default text cursor color. if set to the special value none the
+#: cursor will be rendered with a "reverse video" effect. its color
 #: will be the color of the text in the cell it is over and the text
-#: will be rendered with the background color of the cell. Note that
+#: will be rendered with the background color of the cell. note that
 #: if the program running in the terminal sets a cursor color, this
-#: takes precedence. Also, the cursor colors are modified if the cell
-#: background and foreground colors have very low contrast. Note that
+#: takes precedence. also, the cursor colors are modified if the cell
+#: background and foreground colors have very low contrast. note that
 #: some themes set this value, so if you want to override it, place
 #: your value after the lines where the theme file is included.
 
 # cursor_text_color #111111
 
-#: The color of text under the cursor. If you want it rendered with
+#: the color of text under the cursor. if you want it rendered with
 #: the background color of the cell underneath instead, use the
-#: special keyword: `background`. Note that if cursor is set to none
-#: then this option is ignored. Note that some themes set this value,
+#: special keyword: `background`. note that if cursor is set to none
+#: then this option is ignored. note that some themes set this value,
 #: so if you want to override it, place your value after the lines
 #: where the theme file is included.
 
-# cursor_shape block
+cursor_shape block
 
-#: The cursor shape can be one of block, beam, underline. Note that
+#: the cursor shape can be one of block, beam, underline. note that
 #: when reloading the config this will be changed only if the cursor
-#: shape has not been set by the program running in the terminal. This
+#: shape has not been set by the program running in the terminal. this
 #: sets the default cursor shape, applications running in the terminal
-#: can override it. In particular, shell integration
+#: can override it. in particular, shell integration
 #: <https://sw.kovidgoyal.net/kitty/shell-integration/> in kitty sets
-#: the cursor shape to beam at shell prompts. You can avoid this by
+#: the cursor shape to beam at shell prompts. you can avoid this by
 #: setting shell_integration to no-cursor.
 
 # cursor_shape_unfocused hollow
 
-#: Defines the text cursor shape when the OS window is not focused.
-#: The unfocused cursor shape can be one of block, beam, underline,
+#: defines the text cursor shape when the os window is not focused.
+#: the unfocused cursor shape can be one of block, beam, underline,
 #: hollow and unchanged (leave the cursor shape as it is).
 
 # cursor_beam_thickness 1.5
 
-#: The thickness of the beam cursor (in pts).
+#: the thickness of the beam cursor (in pts).
 
 # cursor_underline_thickness 2.0
 
-#: The thickness of the underline cursor (in pts).
+#: the thickness of the underline cursor (in pts).
 
 # cursor_blink_interval -1
 
-#: The interval to blink the cursor (in seconds). Set to zero to
-#: disable blinking. Negative values mean use system default. Note
-#: that the minimum interval will be limited to repaint_delay. You can
-#: also animate the cursor blink by specifying an easing function. For
+#: the interval to blink the cursor (in seconds). set to zero to
+#: disable blinking. negative values mean use system default. note
+#: that the minimum interval will be limited to repaint_delay. you can
+#: also animate the cursor blink by specifying an easing function. for
 #: example, setting this to option to 0.5 ease-in-out will cause the
 #: cursor blink to be animated over a second, in the first half of the
 #: second it will go from opaque to transparent and then back again
-#: over the next half. You can specify different easing functions for
+#: over the next half. you can specify different easing functions for
 #: the two halves, for example: -1 linear ease-out. kitty supports all
-#: the CSS easing functions <https://developer.mozilla.org/en-
-#: US/docs/Web/CSS/easing-function>. Note that turning on animations
+#: the css easing functions <https://developer.mozilla.org/en-
+#: us/docs/web/css/easing-function>. note that turning on animations
 #: uses extra power as it means the screen is redrawn multiple times
-#: per blink interval. See also, cursor_stop_blinking_after.
+#: per blink interval. see also, cursor_stop_blinking_after.
 
 # cursor_stop_blinking_after 15.0
 
-#: Stop blinking cursor after the specified number of seconds of
-#: keyboard inactivity. Set to zero to never stop blinking.
+#: stop blinking cursor after the specified number of seconds of
+#: keyboard inactivity. set to zero to never stop blinking.
 
-# cursor_trail 0
+cursor_trail 1
 
-#: Set this to a value larger than zero to enable a "cursor trail"
-#: animation. This is an animation that shows a "trail" following the
-#: movement of the text cursor. It makes it easy to follow large
+#: set this to a value larger than zero to enable a "cursor trail"
+#: animation. this is an animation that shows a "trail" following the
+#: movement of the text cursor. it makes it easy to follow large
 #: cursor jumps and makes for a cool visual effect of the cursor
-#: zooming around the screen. The actual value of this option controls
-#: when the animation is triggered. It is a number of milliseconds.
-#: The trail animation only follows cursors that have stayed in their
-#: position for longer than the specified number of milliseconds. This
+#: zooming around the screen. the actual value of this option controls
+#: when the animation is triggered. it is a number of milliseconds.
+#: the trail animation only follows cursors that have stayed in their
+#: position for longer than the specified number of milliseconds. this
 #: prevents trails from appearing for cursors that rapidly change
-#: their positions during UI updates in complex applications. See
+#: their positions during ui updates in complex applications. see
 #: cursor_trail_decay to control the animation speed and
 #: cursor_trail_start_threshold to control when a cursor trail is
 #: started.
 
 # cursor_trail_decay 0.1 0.4
 
-#: Controls the decay times for the cursor trail effect when the
-#: cursor_trail is enabled. This option accepts two positive float
+#: controls the decay times for the cursor trail effect when the
+#: cursor_trail is enabled. this option accepts two positive float
 #: values specifying the fastest and slowest decay times in seconds.
-#: The first value corresponds to the fastest decay time (minimum),
+#: the first value corresponds to the fastest decay time (minimum),
 #: and the second value corresponds to the slowest decay time
-#: (maximum). The second value must be equal to or greater than the
-#: first value. Smaller values result in a faster decay of the cursor
-#: trail. Adjust these values to control how quickly the cursor trail
+#: (maximum). the second value must be equal to or greater than the
+#: first value. smaller values result in a faster decay of the cursor
+#: trail. adjust these values to control how quickly the cursor trail
 #: fades away.
 
 # cursor_trail_start_threshold 2
 
-#: Set the distance threshold for starting the cursor trail. This
+#: set the distance threshold for starting the cursor trail. this
 #: option accepts a positive integer value that represents the minimum
 #: number of cells the cursor must move before the trail is started.
-#: When the cursor moves less than this threshold, the trail is
+#: when the cursor moves less than this threshold, the trail is
 #: skipped, reducing unnecessary cursor trail animation.
 
 #: }}}
@@ -958,7 +958,7 @@ bold_italic_font auto
 #: Fade the text in inactive windows by the specified amount (a number
 #: between zero and one, with zero being fully faded).
 
-# hide_window_decorations no
+hide_window_decorations titlebar-only
 
 #: Hide the window decorations (title-bar and window borders) with
 #: yes. On macOS, titlebar-only and titlebar-and-corners can be used
@@ -1230,7 +1230,7 @@ bold_italic_font auto
 
 #: The foreground and background colors.
 
-# background_opacity 1.0
+background_opacity 0.7
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1255,7 +1255,7 @@ bold_italic_font auto
 #: will only work if dynamic_background_opacity was enabled in the
 #: original config.
 
-# background_blur 0
+background_blur 50
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -1658,7 +1658,7 @@ bold_italic_font auto
 #: special value of ask means that kitty will ask before opening the
 #: link when clicked.
 
-# shell_integration enabled
+shell_integration no-cursor
 
 #: Enable shell integration on supported shells. This enables features
 #: such as jumping to previous prompts, browsing the output of the
@@ -1832,7 +1832,7 @@ bold_italic_font auto
 #: background_opacity. If you want to use both, you are probably
 #: better off just hiding the titlebar with hide_window_decorations.
 
-# macos_option_as_alt no
+macos_option_as_alt no
 
 #: Use the Option key as an Alt key on macOS. With this set to no,
 #: kitty will use the macOS native Option+Key to enter Unicode
@@ -1895,7 +1895,7 @@ bold_italic_font auto
 #: the macOS global menu bar. Values less than one means that there is
 #: no maximum limit.
 
-# macos_custom_beam_cursor no
+macos_custom_beam_cursor yes
 
 #: Use a custom mouse cursor for macOS that is easier to see on both
 #: light and dark backgrounds. Nowadays, the default macOS cursor
@@ -2667,3 +2667,9 @@ bold_italic_font auto
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Macchiato
+include current-theme.conf
+# END_KITTY_THEME
