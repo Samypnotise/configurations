@@ -27,6 +27,14 @@ return {
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
 
+		vim.api.nvim_set_hl(0, "MyNormal", { fg = "#D0D0F2" })
+		vim.api.nvim_set_hl(0, "MyFloatBorder", { fg = "#9D9DFF" })
+		vim.api.nvim_set_hl(0, "MyCursorLine", { bg = "#9D9DFF", fg = "black", bold = true, italic = true })
+
+		vim.api.nvim_set_hl(0, "CmpItemAbbr", { fg = "#D0D0F2", bg = "NONE" }) -- Main color for the text
+		vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = "#D2A852", bg = "NONE", bold = true }) -- Match for the text typed
+		vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = "#F96F6F", bg = "NONE" }) -- Fuzzy matched for the text typed
+
 		cmp.setup({
 			completion = {
 				completeopt = "menu,menuone,preview,noselect",
@@ -70,6 +78,17 @@ return {
 						path = "[Path]",
 						emoji = "[Emoji]",
 					},
+				}),
+			},
+
+			window = {
+				completion = cmp.config.window.bordered({
+					border = "double",
+					winhighlight = "Normal:MyNormal,FloatBorder:MyFloatBorder,CursorLine:MyCursorLine,Search:None",
+				}),
+				documentation = cmp.config.window.bordered({
+					border = "double",
+					winhighlight = "Normal:MyNormal,FloatBorder:MyFloatBorder,CursorLine:MyCursorLine,Search:None",
 				}),
 			},
 		})
