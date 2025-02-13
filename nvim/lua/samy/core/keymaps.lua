@@ -11,7 +11,6 @@ keymap.set("n", "<leader><CR>", "<cmd>NoiceDismiss<CR>", { desc = "Dismiss Noice
 
 -- increment / decrements numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>=", "<C-a>", { desc = "Increment with MacBook Pro keyboard" }) -- increment (MacBookPro keyboard)
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
 
 -- window management
