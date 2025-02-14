@@ -8,7 +8,7 @@
 - [LazyDocker](https://youtu.be/fsYimVXVBhc)
 - [GoBang](https://github.com/TaKO8Ki/gobang) : Visualizing DB in terminal
 - [Useful CLI Tools](https://youtu.be/mmqDYw9C30I)
-- [ATAC (Postman for terminall)](https://github.com/Julien-cpsn/ATAC)
 
-- Posting (Postman for terminal) : brew install posting
+- [Posting - Terminal API client](https://posting.sh/)
 - Yazi (Terminal file manager) : brew install yazi
+- [SSHS (ssh terminal ui)](https://github.com/quantumsheep/sshs)
