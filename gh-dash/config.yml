@@ -21,14 +21,14 @@ repo:
 defaults:
   preview:
     open: true
-    width: 50
+    width: 100
   prsLimit: 20
   issuesLimit: 20
   view: prs
   layout:
     prs:
       updatedAt:
-        width: 5
+        width: 7
       repo:
         width: 20
       author:
@@ -43,7 +43,7 @@ defaults:
         width: 15
     issues:
       updatedAt:
-        width: 5
+        width: 7
       repo:
         width: 15
       creator:
@@ -54,9 +54,20 @@ defaults:
   refetchIntervalMinutes: 30
 keybindings:
   universal: []
-  issues: []
-  prs: []
-  branches: []
+  issues:
+    - key: B
+      command: >
+        tmux display-popup -d {{.RepoPath}} -w 65 -h 10 -E 'ghprb {{.IssueNumber}}'
+    - key: e
+      command: >
+        tmux new-window -c {{.RepoPath}} 'nvim -c ":silent Octo issue edit {{.IssueNumber}}"'
+    - key: i
+      command: >
+        tmux display-popup -d {{.RepoPath}} -w 80% -h 90% -E 'nvim -c ":silent Octo issue create"'
+  prs:
+    - key: O
+      command: >
+        tmux display-popup -d {{.RepoPath}} -w 80% -h 90% -E 'nvim -c ":silent Octo pr edit {{.PrNumber}}"'
 repoPaths: {
     "*": ~/Workspace/*, # Allows access to all repositories in your Workspace
     "*/*": ~/Workspace/*, # Ensures all repos (including non-owned) are matched
