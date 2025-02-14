@@ -81,5 +81,35 @@ return {
 		end, { desc = "Previous todo comment" })
 
 		todo_comments.setup()
+
+		-- 🎨 Overriding colors, otherwise it doesn't apply
+		vim.cmd([[
+      " Foreground colors
+      highlight TodoFgFIX guifg=#F96F6F
+      highlight TodoFgTODO guifg=#50E6FF
+      highlight TodoFgHACK guifg=#EED59E
+      highlight TodoFgWARN guifg=#FFA532
+      highlight TodoFgPERF guifg=#26FF85
+      highlight TodoFgNOTE guifg=#9D9DFF
+      highlight TodoFgTEST guifg=#D76EFC
+
+      " Background colors
+      highlight TodoBgFIX guibg=#4B2C2C guifg=#F96F6F
+      highlight TodoBgTODO guibg=#1F3A5F guifg=#50E6FF
+      highlight TodoBgHACK guibg=#B88A47 guifg=#EED59E
+      highlight TodoBgWARN guibg=#4E2D00 guifg=#FFA532
+      highlight TodoBgPERF guibg=#1E4D36 guifg=#26FF85
+      highlight TodoBgNOTE guibg=#2E2A4E guifg=#9D9DFF
+      highlight TodoBgTEST guibg=#3A1E4E guifg=#D76EFC
+
+      " Signs (for the gutter column)
+      highlight TodoSignFIX guibg=NONE guifg=#F96F6F
+      highlight TodoSignTODO guibg=NONE guifg=#50E6FF
+      highlight TodoSignHACK guibg=NONE guifg=#EED59E
+      highlight TodoSignWARN guibg=NONE guifg=#FFA532
+      highlight TodoSignPERF guibg=NONE guifg=#26FF85
+      highlight TodoSignNOTE guibg=NONE guifg=#9D9DFF
+      highlight TodoSignTEST guibg=NONE guifg=#D76EFC
+    ]])
 	end,
 }
