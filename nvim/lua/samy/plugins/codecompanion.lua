@@ -115,14 +115,14 @@ return {
 			},
 		},
 	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		opts = { ensure_installed = { "yaml", "markdown" } },
-	},
-	{
-		"CopilotC-Nvim/CopilotChat.nvim",
-		enabled = false,
-	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	opts = { ensure_installed = { "yaml", "markdown" } },
+	-- },
+	-- {
+	-- 	"CopilotC-Nvim/CopilotChat.nvim",
+	-- 	enabled = false,
+	-- },
 	{
 		"github/copilot.vim",
 	},
@@ -197,7 +197,7 @@ return {
 					-- Change to true to show the current model
 					show_settings = false,
 					window = {
-						layout = "vertical", -- float|vertical|horizontal|buffer
+						layout = "float", -- float|vertical|horizontal|buffer
 					},
 				},
 			},
