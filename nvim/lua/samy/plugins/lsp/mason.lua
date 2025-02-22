@@ -37,6 +37,7 @@ return {
 				"prismals",
 				"ast_grep", -- Dart, JavaScript, JSX, Kotlin
 				"dockerls",
+				"eslint",
 			},
 		})
 
@@ -44,7 +45,7 @@ return {
 			ensure_installed = {
 				"prettierd",
 				"stylua", -- lua formatter
-				"eslint_d",
+				"eslint",
 			},
 		})
 	end,
