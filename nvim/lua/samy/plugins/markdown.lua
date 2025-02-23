@@ -6,10 +6,24 @@ return {
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
 	ft = { "markdown", "codecompanion" },
-	opts = {
-		render_modes = true, -- Render in ALL modes
-		sign = {
-			enabled = false, -- Turn off in the status column
-		},
-	},
+	config = function()
+		local render_markdown = require("render-markdown")
+
+		render_markdown.setup({
+			render_modes = true, -- Render in ALL modes
+			sign = {
+				enabled = false, -- Turn off in the status column
+			},
+			heading = { border = true },
+			indent = { enabled = false },
+			-- NOTE: quote and win_options are only for quotes
+			quote = { repeat_linebreak = true },
+			win_options = {
+				showbreak = { default = "", rendered = "  " },
+				breakindent = { default = false, rendered = true },
+				breakindentopt = { default = "", rendered = "" },
+			},
+			pipe_table = { preset = "heavy" },
+		})
+	end,
 }
