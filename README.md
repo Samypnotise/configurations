@@ -10,5 +10,5 @@
 - [Useful CLI Tools](https://youtu.be/mmqDYw9C30I)
 
 - [Posting - Terminal API client](https://posting.sh/)
-- Yazi (Terminal file manager) : brew install yazi
 - [SSHS (ssh terminal ui)](https://github.com/quantumsheep/sshs)
+- [Superfile (File manager in the terminal)](https://github.com/yorukot/superfile)
