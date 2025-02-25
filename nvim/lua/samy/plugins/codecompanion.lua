@@ -197,7 +197,7 @@ return {
 					-- Change to true to show the current model
 					show_settings = false,
 					window = {
-						layout = "float", -- float|vertical|horizontal|buffer
+						layout = "vertical", -- float|vertical|horizontal|buffer
 					},
 				},
 			},
