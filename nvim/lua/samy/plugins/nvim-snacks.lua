@@ -8,12 +8,17 @@ return {
 		dashboard = { enabled = true },
 		indent = { enabled = true },
 		input = { enabled = true },
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+			sources = { files = { hidden = true } },
+			formatters = { file = { filename_first = true } },
+		},
 		notifier = {
 			enabled = true,
 			timeout = 3000,
 			style = "fancy",
 		},
+		explorer = { enabled = true, replace_netrw = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
@@ -109,11 +114,18 @@ return {
 			desc = "Notification History",
 		},
 		{
-			"<leader>e",
+			"<leader>ee",
 			function()
 				Snacks.explorer()
 			end,
-			desc = "File Explorer",
+			desc = "Toggle file Explorer",
+		},
+		{
+			"<leader>ec",
+			function()
+				Snacks.explorer():close()
+			end,
+			desc = "Close file Explorer",
 		},
 		-- find
 		{
