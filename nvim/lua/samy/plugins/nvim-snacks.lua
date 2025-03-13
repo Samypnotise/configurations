@@ -12,6 +12,13 @@ return {
 			enabled = true,
 			sources = { files = { hidden = true } },
 			formatters = { file = { filename_first = true } },
+			icons = {
+				tree = {
+					vertical = "║ ",
+					middle = "╠═",
+					last = "╚═",
+				},
+			},
 		},
 		notifier = {
 			enabled = true,
