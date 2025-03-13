@@ -3,3 +3,5 @@ flutter/
 iterm2/
 wireshark/
 yarn/
+node_modules/
+.DS_Store
