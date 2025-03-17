@@ -11,4 +11,5 @@
 
 - [Posting - Terminal API client](https://posting.sh/)
 - [SSHS (ssh terminal ui)](https://github.com/quantumsheep/sshs)
+- [Termius (SSH GUI Application)](https://termius.com/)
 - [Superfile (File manager in the terminal)](https://github.com/yorukot/superfile)
