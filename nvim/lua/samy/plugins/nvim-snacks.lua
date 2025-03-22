@@ -10,13 +10,24 @@ return {
 		input = { enabled = true },
 		picker = {
 			enabled = true,
-			sources = { files = { hidden = true } },
+			-- sources = { files = {} },
 			formatters = { file = { filename_first = true } },
 			icons = {
 				tree = {
 					vertical = "║ ",
 					middle = "╠═",
 					last = "╚═",
+				},
+			},
+			win = {
+				input = {
+					keys = {
+						["<C-h>"] = { "toggle_hidden", mode = { "i", "n" } },
+						["<C-i>"] = { "toggle_ignored", mode = { "i", "n" } },
+						["<C-l>"] = { "toggle_live", mode = { "i", "n" } },
+						["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+						["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+					},
 				},
 			},
 		},
