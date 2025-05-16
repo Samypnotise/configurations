@@ -18,15 +18,15 @@ return {
 		workspaces = {
 			{
 				name = "Infyneis",
-				path = "~/Obsidian/infyneis",
+				path = "~/Obsidian/",
 			},
 		},
 		-- Alternatively - and for backwards compatibility - you can set 'dir' to a single path instead of
 		-- 'workspaces'. For example:
-		-- dir = "~/vaults/work",
+		-- dir = "~/Obsidian/",
 
 		-- Optional, if you keep notes in a specific subdirectory of your vault.
-		notes_subdir = "notes",
+		notes_subdir = "Notes",
 
 		-- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
 		-- levels defined by "vim.log.levels.*".
@@ -34,7 +34,7 @@ return {
 
 		daily_notes = {
 			-- Optional, if you keep daily notes in a separate directory.
-			folder = "notes/dailies",
+			folder = "Notes/dailies",
 			-- Optional, if you want to change the date format for the ID of daily notes.
 			date_format = "%Y-%m-%d",
 			-- Optional, if you want to change the date format of the default alias of daily notes.
@@ -84,50 +84,6 @@ return {
 		--  * "notes_subdir" - put new notes in the default notes subdirectory.
 		new_notes_location = "notes_subdir",
 
-		-- Optional, customize how note IDs are generated given an optional title.
-		---@param title string|?
-		---@return string
-		note_id_func = function(title)
-			-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-			-- In this case a note with the title 'My new note' will be given an ID that looks
-			-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
-			local suffix = ""
-			if title ~= nil then
-				-- If title is given, transform it into valid file name.
-				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-			else
-				-- If title is nil, just add 4 random uppercase letters to the suffix.
-				for _ = 1, 4 do
-					suffix = suffix .. string.char(math.random(65, 90))
-				end
-			end
-			return tostring(os.time()) .. "-" .. suffix
-		end,
-
-		-- Optional, customize how note file names are generated given the ID, target directory, and title.
-		---@param spec { id: string, dir: obsidian.Path, title: string|? }
-		---@return string|obsidian.Path The full path to the new note.
-		note_path_func = function(spec)
-			-- This is equivalent to the default behavior.
-			local path = spec.dir / tostring(spec.id)
-			return path:with_suffix(".md")
-		end,
-
-		-- Optional, customize how wiki links are formatted. You can set this to one of:
-		--  * "use_alias_only", e.g. '[[Foo Bar]]'
-		--  * "prepend_note_id", e.g. '[[foo-bar|Foo Bar]]'
-		--  * "prepend_note_path", e.g. '[[foo-bar.md|Foo Bar]]'
-		--  * "use_path_only", e.g. '[[foo-bar.md]]'
-		-- Or you can set it to a function that takes a table of options and returns a string, like this:
-		wiki_link_func = function(opts)
-			return require("obsidian.util").wiki_link_id_prefix(opts)
-		end,
-
-		-- Optional, customize how markdown links are formatted.
-		markdown_link_func = function(opts)
-			return require("obsidian.util").markdown_link(opts)
-		end,
-
 		-- Either 'wiki' or 'markdown'.
 		preferred_link_style = "wiki",
 
@@ -135,55 +91,14 @@ return {
 		-- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
 		disable_frontmatter = false,
 
-		-- Optional, alternatively you can customize the frontmatter data.
-		---@return table
-		note_frontmatter_func = function(note)
-			-- Add the title of the note as an alias.
-			if note.title then
-				note:add_alias(note.title)
-			end
-
-			local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-
-			-- `note.metadata` contains any manually added fields in the frontmatter.
-			-- So here we just make sure those fields are kept in the frontmatter.
-			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-				for k, v in pairs(note.metadata) do
-					out[k] = v
-				end
-			end
-
-			return out
-		end,
-
 		-- Optional, for templates (see below).
 		templates = {
-			folder = "templates",
+			folder = "Templates",
 			date_format = "%Y-%m-%d",
 			time_format = "%H:%M",
 			-- A map for custom variables, the key should be the variable and the value a function
 			substitutions = {},
 		},
-
-		-- Optional, by default when you use `:ObsidianFollowLink` on a link to an external
-		-- URL it will be ignored but you can customize this behavior here.
-		---@param url string
-		follow_url_func = function(url)
-			-- Open the URL in the default web browser.
-			vim.fn.jobstart({ "open", url }) -- Mac OS
-			-- vim.fn.jobstart({"xdg-open", url})  -- linux
-			-- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
-			-- vim.ui.open(url) -- need Neovim 0.10.0+
-		end,
-
-		-- Optional, by default when you use `:ObsidianFollowLink` on a link to an image
-		-- file it will be ignored but you can customize this behavior here.
-		---@param img string
-		follow_img_func = function(img)
-			vim.fn.jobstart({ "qlmanage", "-p", img }) -- Mac OS quick look preview
-			-- vim.fn.jobstart({"xdg-open", url})  -- linux
-			-- vim.cmd(':silent exec "!start ' .. url .. '"') -- Windows
-		end,
 
 		-- Optional, set to true if you use the Obsidian Advanced URI plugin.
 		-- https://github.com/Vinzent03/obsidian-advanced-uri
