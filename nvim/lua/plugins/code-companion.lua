@@ -138,7 +138,7 @@ return {
       strategies = {
         chat = {
           adapter = "copilot",
-          roles = { llm = "  Copilot Chat", user = "Samypnotise" },
+          roles = { llm = "  Copilot Chat", user = "Infyneis" },
           slash_commands = {
             ["buffer"] = {
               callback = "strategies.chat.slash_commands.buffer",
